@@ -135,7 +135,9 @@ module Mongoid
           return false
         end
       end
-      callback_executable?(kind) ? super(kind, *args, &block) : true
+      # this that cause callback to activesupport that update entire atomic fields
+      #callback_executable?(kind) ? super(kind, *args, &block) : true
+      true
     end
 
     private
